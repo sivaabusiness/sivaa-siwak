@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIVÀA Geneva — Siwak Naturel & Brosse Botanique à Genève</title>
+  <meta name="description" content="Achetez le Siwak naturel premium à Genève. Brosse à dents naturelle Suisse, blanchiment dentaire naturel. Livraison Swiss Post."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'siv-bg':               '#09160b',
+            'siv-text':             '#d7e7d4',
+            'siv-text-variant':     '#c2c9b4',
+            'siv-primary':          '#9dd75a',
+            'siv-primary-fixed':    '#b7f473',
+            'siv-secondary':        '#a3d480',
+            'siv-outline':          '#8c9380',
+            'siv-outline-variant':  '#424939',
+            'siv-surface-lowest':   '#051107',
+            'siv-surface-low':      '#111f13',
+            'siv-surface-mid':      '#152317',
+            'siv-surface-high':     '#202d21',
+            'siv-surface-highest':  '#2a382b',
+            'siv-secondary-container': '#27500a',
+            'siv-tertiary':         '#b4d08b',
+            'siv-tertiary-container': '#7f995a',
+            'siv-dark-green':       '#1e3700',
+            'siv-ivory':            '#F5F0E8',
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ── Variables utilitaires ─────────────────────────────── */
+    body { background: #09160b; color: #d7e7d4; font-family: 'Inter', sans-serif; font-size: 0.875rem; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'Newsreader', Georgia, serif; }
+    ::selection { background: #9dd75a33; color: #d7e7d4; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #09160b; } ::-webkit-scrollbar-thumb { background: #424939; border-radius: 3px; }
+
+    /* ── Composants ────────────────────────────────────────── */
+    .glass { background: rgba(9,22,11,0.7); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(66,73,57,0.3); }
+    .card-siv { background: #111f13; border-radius: 0.5rem; }
+    .btn-primary { background: #9dd75a; color: #1e3700; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #b7f473; }
+    .btn-ghost { color: #d7e7d4; font-weight: 500; padding: 0.75rem 1.5rem; border-radius: 0.5rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn-ghost:hover { background: #202d21; }
+    .shadow-siv { box-shadow: 0 8px 32px rgba(9,22,11,0.6); }
+    .shadow-siv-lg { box-shadow: 0 16px 48px rgba(9,22,11,0.8); }
+    .glow-primary { filter: drop-shadow(0 0 20px rgba(157,215,90,0.3)); }
+
+    /* ── Popup modal ───────────────────────────────────────── */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 1rem; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: #111f13; border-radius: 1rem; overflow: hidden; width: 100%; max-width: 32rem; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.6); }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .icon-plus { display: none; }
+    details:not([open]) .icon-minus { display: none; }
+    .star-filled { color: #9dd75a; }
+    .product-img { width: 100%; height: 16rem; object-fit: cover; }
+  </style>
+</head>
+
+<body>
+<!-- ════════════════════════════════════════════════════════════════
+     NAVBAR — modifie les liens href="#" avec tes vraies URLs
+════════════════════════════════════════════════════════════════ -->
+<nav class="fixed top-0 left-0 right-0 z-40 glass">
+  <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:4rem;">
+    <a href="/" style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.15em;color:#d7e7d4;text-decoration:none;">SIVÀA</a>
+    <nav style="display:flex;gap:2rem;">
+      <a href="/" style="font-size:0.875rem;color:#c2c9b4;text-decoration:none;">Accueil</a>
+      <a href="/blog" style="font-size:0.875rem;color:#c2c9b4;text-decoration:none;">Journal</a>
+      <a href="/contact" style="font-size:0.875rem;color:#c2c9b4;text-decoration:none;">Contact</a>
+    </nav>
+    <a href="/checkout" class="btn-primary" style="padding:0.5rem 1rem;font-size:0.875rem;">Acheter</a>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     HERO — modifie le titre, le sous-titre, et l'image
+════════════════════════════════════════════════════════════════ -->
+<section style="min-height:100vh;display:flex;align-items:center;padding-top:4rem;overflow:hidden;background:linear-gradient(135deg,#051107,#09160b,rgba(39,80,10,0.2));">
+  <div style="max-width:80rem;margin:0 auto;padding:5rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+
+    <!-- Texte gauche -->
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(39,80,10,0.6);color:#a3d480;padding:0.5rem 1rem;border-radius:9999px;font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#9dd75a;"></span>
+        Hand-harvested · Pakistan · Swiss Certified
+      </div>
+
+      <!-- ★ TITRE PRINCIPAL — modifie ici -->
+      <h1 style="font-size:4rem;font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#d7e7d4;">
+        L'Art du <em style="font-style:normal;color:#9dd75a;">Siwak</em> à <span style="color:#c2c9b4;">Genève</span>
+      </h1>
+
+      <!-- ★ SOUS-TITRE — modifie ici -->
+      <p style="color:#c2c9b4;font-size:1.125rem;line-height:1.8;max-width:36rem;margin-bottom:2.5rem;">
+        La brosse à dents naturelle que le monde utilise depuis 1000 ans — sélectionnée avec la précision suisse. Antibactérien, blanchissant, biodégradable. Livraison en 48h à travers toute la Suisse.
+      </p>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="/checkout" class="btn-primary" style="font-size:1rem;">
+          Commander maintenant →
+        </a>
+        <a href="/blog" class="btn-ghost" style="font-size:1rem;">
+          Découvrir le Siwak
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div style="display:flex;gap:1.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(66,73,57,0.2);flex-wrap:wrap;">
+        <span style="font-size:0.875rem;color:#c2c9b4;">🚚 Swiss Post 48h</span>
+        <span style="font-size:0.875rem;color:#c2c9b4;">🌿 100% Naturel</span>
+        <span style="font-size:0.875rem;color:#c2c9b4;">🔒 SSL Sécurisé</span>
+      </div>
+    </div>
+
+    <!-- ★ IMAGE HERO — remplace le src par ta vraie photo -->
+    <div style="position:relative;">
+      <div style="border-radius:0.75rem;overflow:hidden;" class="shadow-siv-lg glow-primary">
+        <img
+          src="https://storage.googleapis.com/a1aa/image/YhGVg5vDqaLUDpHO6VFGqGsRh5y-KQWZE_oy8LqsBUI.jpg"
+          alt="Bâton de Siwak SIVÀA Geneva"
+          style="width:100%;height:43rem;object-fit:cover;"
+        />
+      </div>
+      <!-- Badge flottant -->
+      <div style="position:absolute;bottom:-1rem;left:-1rem;background:#2a382b;padding:0.75rem 1.25rem;border-radius:0.75rem;" class="shadow-siv">
+        <span style="font-size:0.875rem;font-weight:500;color:#d7e7d4;">⭐ 4.9/5 — 200+ avis Genève</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     PRODUITS — modifie name, price, desc, img pour chaque produit
+════════════════════════════════════════════════════════════════ -->
+<section style="max-width:80rem;margin:0 auto;padding:6rem 1.5rem;" id="produits">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;">
+    <div>
+      <p style="font-size:0.7rem;color:#9dd75a;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:0.75rem;">L'Atelier Botanique</p>
+      <h2 style="font-size:2.5rem;font-weight:300;color:#d7e7d4;">Notre <em style="font-style:normal;color:#9dd75a;">Collection</em></h2>
+    </div>
+    <a href="/checkout" style="color:#c2c9b4;font-size:0.875rem;text-decoration:none;">Voir tout →</a>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+    <!-- ★★ PRODUIT 1 — Bâton de Siwak ★★ -->
+    <article class="card-siv" style="overflow:hidden;cursor:pointer;" onclick="openModal('modal-1')">
+      <div style="position:relative;height:16rem;overflow:hidden;background:#152317;">
+        <!-- ★ IMAGE PRODUIT 1 — remplace src -->
+        <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg"
+             alt="Bâton de Siwak Premium"
+             style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;top:0.75rem;left:0.75rem;background:rgba(127,153,90,0.8);color:#b4d08b;font-size:0.7rem;padding:0.25rem 0.75rem;border-radius:9999px;backdrop-filter:blur(4px);">
+          Récolté à la main · Pakistan
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <h3 style="font-size:1.125rem;font-weight:400;color:#d7e7d4;margin-bottom:0.5rem;">Bâton de Siwak Premium</h3>
+        <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;">Antibactérien naturel. Riche en silice, tanins et minéraux. Prêt à l'emploi.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Newsreader',serif;font-size:1.25rem;color:#9dd75a;">CHF 12.00</span>
+          <button onclick="openModal('modal-1')" style="padding:0.5rem 1rem;background:#2a382b;color:#d7e7d4;border:none;border-radius:0.5rem;font-size:0.875rem;cursor:pointer;">Découvrir</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ★★ PRODUIT 2 — Dentifrice Botanique ★★ -->
+    <article class="card-siv" style="overflow:hidden;cursor:pointer;" onclick="openModal('modal-2')">
+      <div style="position:relative;height:16rem;overflow:hidden;background:#152317;">
+        <!-- ★ IMAGE PRODUIT 2 — remplace src -->
+        <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg"
+             alt="Dentifrice Botanique"
+             style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;top:0.75rem;left:0.75rem;background:rgba(127,153,90,0.8);color:#b4d08b;font-size:0.7rem;padding:0.25rem 0.75rem;border-radius:9999px;backdrop-filter:blur(4px);">
+          Essences de menthe & myrrhe
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <h3 style="font-size:1.125rem;font-weight:400;color:#d7e7d4;margin-bottom:0.5rem;">Dentifrice Botanique</h3>
+        <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;">Formulation sans fluorure artificiel. Compatible avec votre rituel Siwak.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Newsreader',serif;font-size:1.25rem;color:#9dd75a;">CHF 19.00</span>
+          <button onclick="openModal('modal-2')" style="padding:0.5rem 1rem;background:#2a382b;color:#d7e7d4;border:none;border-radius:0.5rem;font-size:0.875rem;cursor:pointer;">Découvrir</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- ★★ PRODUIT 3 — Coffret Essentiel ★★ -->
+    <article class="card-siv" style="overflow:hidden;cursor:pointer;" onclick="openModal('modal-3')">
+      <div style="position:relative;height:16rem;overflow:hidden;background:#152317;">
+        <!-- ★ IMAGE PRODUIT 3 — remplace src -->
+        <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg"
+             alt="L'Essentiel SIVÀA"
+             style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;"
+             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+        <div style="position:absolute;top:0.75rem;left:0.75rem;background:rgba(127,153,90,0.8);color:#b4d08b;font-size:0.7rem;padding:0.25rem 0.75rem;border-radius:9999px;backdrop-filter:blur(4px);">
+          Coffret cèdre exclusif
+        </div>
+      </div>
+      <div style="padding:1.5rem;">
+        <h3 style="font-size:1.125rem;font-weight:400;color:#d7e7d4;margin-bottom:0.5rem;">L'Essentiel SIVÀA</h3>
+        <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;">Siwak + Dentifrice Botanique, livrés dans un étui artisanal en bois de cèdre.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Newsreader',serif;font-size:1.25rem;color:#9dd75a;">CHF 38.00</span>
+          <button onclick="openModal('modal-3')" style="padding:0.5rem 1rem;background:#2a382b;color:#d7e7d4;border:none;border-radius:0.5rem;font-size:0.875rem;cursor:pointer;">Découvrir</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     POPUPS PRODUITS — modifie les descriptions et images
+════════════════════════════════════════════════════════════════ -->
+
+<!-- Popup Produit 1 -->
+<div id="modal-1" class="modal-overlay" onclick="closeModal('modal-1')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button onclick="closeModal('modal-1')" style="position:absolute;top:1rem;right:1rem;z-index:10;width:2.25rem;height:2.25rem;background:rgba(9,22,11,0.8);border:none;border-radius:50%;color:#c2c9b4;cursor:pointer;font-size:1.25rem;display:flex;align-items:center;justify-content:center;">✕</button>
+    <!-- ★ IMAGE POPUP 1 -->
+    <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg" alt="Bâton de Siwak Premium" style="width:100%;height:14rem;object-fit:cover;"/>
+    <div style="padding:1.5rem;">
+      <div style="display:flex;gap:2px;margin-bottom:0.75rem;">⭐⭐⭐⭐⭐ <span style="color:#8c9380;font-size:0.75rem;margin-left:0.5rem;">4.9 / 5 · 200+ avis</span></div>
+      <h2 style="font-size:1.5rem;font-weight:300;color:#d7e7d4;margin-bottom:0.5rem;">Bâton de Siwak Premium</h2>
+      <!-- ★ DESCRIPTION POPUP 1 -->
+      <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.7;margin-bottom:1rem;">Antibactérien naturel. Riche en silice, tanins et minéraux. Prêt à l'emploi, sans accessoire.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1rem;display:flex;flex-direction:column;gap:0.5rem;">
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 70+ minéraux actifs dont fluor naturel</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Antibactérien prouvé contre la plaque</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Blanchiment naturel sans abrasion</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Zéro plastique · 100% biodégradable</li>
+      </ul>
+      <div style="background:#152317;border-radius:0.5rem;padding:0.75rem;font-size:0.75rem;color:#8c9380;margin-bottom:1.25rem;">🚚 Livraison Swiss Post · CHF 9.00 · 48h</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <p style="font-size:0.7rem;color:#8c9380;text-transform:uppercase;letter-spacing:0.1em;">Prix</p>
+          <p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">CHF 12.00</p>
+        </div>
+        <a href="/checkout" class="btn-primary" onclick="closeModal('modal-1')" style="font-size:0.875rem;">🛍 Acheter maintenant</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup Produit 2 -->
+<div id="modal-2" class="modal-overlay" onclick="closeModal('modal-2')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button onclick="closeModal('modal-2')" style="position:absolute;top:1rem;right:1rem;z-index:10;width:2.25rem;height:2.25rem;background:rgba(9,22,11,0.8);border:none;border-radius:50%;color:#c2c9b4;cursor:pointer;font-size:1.25rem;display:flex;align-items:center;justify-content:center;">✕</button>
+    <!-- ★ IMAGE POPUP 2 -->
+    <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg" alt="Dentifrice Botanique" style="width:100%;height:14rem;object-fit:cover;"/>
+    <div style="padding:1.5rem;">
+      <div style="display:flex;gap:2px;margin-bottom:0.75rem;">⭐⭐⭐⭐⭐ <span style="color:#8c9380;font-size:0.75rem;margin-left:0.5rem;">4.9 / 5 · 200+ avis</span></div>
+      <h2 style="font-size:1.5rem;font-weight:300;color:#d7e7d4;margin-bottom:0.5rem;">Dentifrice Botanique</h2>
+      <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.7;margin-bottom:1rem;">Formulation sans fluorure artificiel. Essences pures de menthe poivrée et de myrrhe.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1rem;display:flex;flex-direction:column;gap:0.5rem;">
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Sans fluorure artificiel ni SLS</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Menthe & myrrhe — fraîcheur longue durée</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Renforce l'émail et apaise les gencives</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Testé dermatologiquement · vegan</li>
+      </ul>
+      <div style="background:#152317;border-radius:0.5rem;padding:0.75rem;font-size:0.75rem;color:#8c9380;margin-bottom:1.25rem;">🚚 Livraison Swiss Post · CHF 9.00 · 48h</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <p style="font-size:0.7rem;color:#8c9380;text-transform:uppercase;letter-spacing:0.1em;">Prix</p>
+          <p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">CHF 19.00</p>
+        </div>
+        <a href="/checkout" class="btn-primary" onclick="closeModal('modal-2')" style="font-size:0.875rem;">🛍 Acheter maintenant</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup Produit 3 -->
+<div id="modal-3" class="modal-overlay" onclick="closeModal('modal-3')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button onclick="closeModal('modal-3')" style="position:absolute;top:1rem;right:1rem;z-index:10;width:2.25rem;height:2.25rem;background:rgba(9,22,11,0.8);border:none;border-radius:50%;color:#c2c9b4;cursor:pointer;font-size:1.25rem;display:flex;align-items:center;justify-content:center;">✕</button>
+    <!-- ★ IMAGE POPUP 3 -->
+    <img src="https://storage.googleapis.com/a1aa/image/JhtpfQ2d5eBvXlLCzqOGwDDm0VoADaFnJ-sTvxU8cCU.jpg" alt="L'Essentiel SIVÀA" style="width:100%;height:14rem;object-fit:cover;"/>
+    <div style="padding:1.5rem;">
+      <div style="display:flex;gap:2px;margin-bottom:0.75rem;">⭐⭐⭐⭐⭐ <span style="color:#8c9380;font-size:0.75rem;margin-left:0.5rem;">4.9 / 5 · 200+ avis</span></div>
+      <h2 style="font-size:1.5rem;font-weight:300;color:#d7e7d4;margin-bottom:0.5rem;">L'Essentiel SIVÀA</h2>
+      <p style="color:#c2c9b4;font-size:0.875rem;line-height:1.7;margin-bottom:1rem;">Siwak fraîchement récolté + Dentifrice Botanique, livrés dans un étui artisanal en bois de cèdre.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1rem;display:flex;flex-direction:column;gap:0.5rem;">
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Bâton de Siwak Premium + Dentifrice Botanique</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Étui artisanal en bois de cèdre inclus</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Emballage cadeau · livraison soignée</li>
+        <li style="color:#c2c9b4;font-size:0.875rem;">🌿 Économie de CHF 2.00 vs achat séparé</li>
+      </ul>
+      <div style="background:#152317;border-radius:0.5rem;padding:0.75rem;font-size:0.75rem;color:#8c9380;margin-bottom:1.25rem;">🚚 Livraison Swiss Post · CHF 9.00 · 48h</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <p style="font-size:0.7rem;color:#8c9380;text-transform:uppercase;letter-spacing:0.1em;">Prix</p>
+          <p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">CHF 38.00</p>
+        </div>
+        <a href="/checkout" class="btn-primary" onclick="closeModal('modal-3')" style="font-size:0.875rem;">🛍 Acheter maintenant</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     AVIS CLIENTS — modifie les textes des avis
+════════════════════════════════════════════════════════════════ -->
+<section style="background:#051107;padding:6rem 0;">
+  <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;">
+    <div style="text-align:center;margin-bottom:3.5rem;">
+      <p style="font-size:0.7rem;color:#9dd75a;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:0.75rem;">Témoignages</p>
+      <h2 style="font-size:2.5rem;font-weight:300;color:#d7e7d4;">Ce que disent nos <em style="font-style:normal;color:#9dd75a;">clients</em></h2>
+      <p style="color:#c2c9b4;font-size:0.875rem;margin-top:0.75rem;">4.9/5 · Plus de 200 avis vérifiés depuis Genève et toute la Suisse</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+
+      <!-- ★ AVIS 1 — modifie le texte, le nom, la ville -->
+      <div style="background:#111f13;border-radius:0.75rem;padding:1.75rem;display:flex;flex-direction:column;gap:1.25rem;">
+        <div>⭐⭐⭐⭐⭐</div>
+        <blockquote style="font-family:'Newsreader',serif;font-size:1rem;color:#d7e7d4;line-height:1.7;font-style:italic;">"Je cherchais une alternative naturelle depuis longtemps. Le Siwak SIVÀA a complètement remplacé ma brosse à dents électrique. Dents plus blanches en 2 semaines, gencives apaisées."</blockquote>
+        <div style="display:flex;align-items:center;gap:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(66,73,57,0.2);">
+          <div style="width:2.25rem;height:2.25rem;border-radius:50%;background:#27500a;display:flex;align-items:center;justify-content:center;color:#9dd75a;font-weight:600;">S</div>
+          <div>
+            <p style="font-size:0.875rem;font-weight:500;color:#d7e7d4;">Sophie M.</p>
+            <p style="font-size:0.75rem;color:#8c9380;">Genève · Mars 2024</p>
+          </div>
+          <span style="margin-left:auto;font-size:0.7rem;background:#2a382b;color:#c2c9b4;padding:0.2rem 0.6rem;border-radius:9999px;">Siwak Premium</span>
+        </div>
+      </div>
+
+      <!-- ★ AVIS 2 -->
+      <div style="background:#111f13;border-radius:0.75rem;padding:1.75rem;display:flex;flex-direction:column;gap:1.25rem;">
+        <div>⭐⭐⭐⭐⭐</div>
+        <blockquote style="font-family:'Newsreader',serif;font-size:1rem;color:#d7e7d4;line-height:1.7;font-style:italic;">"Qualité exceptionnelle. Le bâton est frais, flexible, avec cet arôme poivré caractéristique d'un Siwak de première qualité. J'en commande pour toute ma famille."</blockquote>
+        <div style="display:flex;align-items:center;gap:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(66,73,57,0.2);">
+          <div style="width:2.25rem;height:2.25rem;border-radius:50%;background:#27500a;display:flex;align-items:center;justify-content:center;color:#9dd75a;font-weight:600;">K</div>
+          <div>
+            <p style="font-size:0.875rem;font-weight:500;color:#d7e7d4;">Karim B.</p>
+            <p style="font-size:0.75rem;color:#8c9380;">Lausanne · Février 2024</p>
+          </div>
+          <span style="margin-left:auto;font-size:0.7rem;background:#2a382b;color:#c2c9b4;padding:0.2rem 0.6rem;border-radius:9999px;">Coffret Essentiel</span>
+        </div>
+      </div>
+
+      <!-- ★ AVIS 3 -->
+      <div style="background:#111f13;border-radius:0.75rem;padding:1.75rem;display:flex;flex-direction:column;gap:1.25rem;">
+        <div>⭐⭐⭐⭐⭐</div>
+        <blockquote style="font-family:'Newsreader',serif;font-size:1rem;color:#d7e7d4;line-height:1.7;font-style:italic;">"Complètement conquise par le dentifrice botanique. Sans fluor artificiel, goût menthe très naturel. Je l'utilise avec le Siwak chaque matin — ma bouche n'a jamais été aussi propre."</blockquote>
+        <div style="display:flex;align-items:center;gap:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(66,73,57,0.2);">
+          <div style="width:2.25rem;height:2.25rem;border-radius:50%;background:#27500a;display:flex;align-items:center;justify-content:center;color:#9dd75a;font-weight:600;">A</div>
+          <div>
+            <p style="font-size:0.875rem;font-weight:500;color:#d7e7d4;">Amina T.</p>
+            <p style="font-size:0.75rem;color:#8c9380;">Zürich · Avril 2024</p>
+          </div>
+          <span style="margin-left:auto;font-size:0.7rem;background:#2a382b;color:#c2c9b4;padding:0.2rem 0.6rem;border-radius:9999px;">Dentifrice Botanique</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats -->
+    <div style="margin-top:2.5rem;display:flex;justify-content:center;gap:4rem;text-align:center;flex-wrap:wrap;">
+      <div><p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">200+</p><p style="font-size:0.75rem;color:#c2c9b4;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">Avis vérifiés</p></div>
+      <div><p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">4.9</p><p style="font-size:0.75rem;color:#c2c9b4;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">Note moyenne</p></div>
+      <div><p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">98%</p><p style="font-size:0.75rem;color:#c2c9b4;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">Recommandent</p></div>
+      <div><p style="font-family:'Newsreader',serif;font-size:2rem;color:#9dd75a;">48h</p><p style="font-size:0.75rem;color:#c2c9b4;text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">Livraison Suisse</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     FAQ — modifie les questions / réponses
+════════════════════════════════════════════════════════════════ -->
+<section style="max-width:48rem;margin:0 auto;padding:6rem 1.5rem;">
+  <div style="text-align:center;margin-bottom:3.5rem;">
+    <p style="font-size:0.7rem;color:#9dd75a;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:0.75rem;">Questions fréquentes</p>
+    <h2 style="font-size:2.5rem;font-weight:300;color:#d7e7d4;">Tout savoir sur le <em style="font-style:normal;color:#9dd75a;">Siwak</em></h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:0.75rem;">
+
+    <!-- ★ FAQ — modifie chaque question/réponse -->
+    <details style="background:#111f13;border-radius:0.75rem;overflow:hidden;">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;cursor:pointer;list-style:none;">
+        <span style="font-weight:500;color:#d7e7d4;">Comment utiliser le Siwak pour la première fois ?</span>
+        <span style="color:#8c9380;font-size:1.25rem;flex-shrink:0;">+</span>
+      </summary>
+      <div style="padding:0 1.5rem 1.25rem;color:#c2c9b4;font-size:0.875rem;line-height:1.7;border-top:1px solid rgba(66,73,57,0.2);padding-top:1rem;">
+        Trempez l'extrémité du bâton dans de l'eau pendant 5 minutes pour l'assouplir. Mâchez doucement pour effilocher les fibres et former une brosse naturelle. Frottez vos dents et vos gencives en mouvement circulaire pendant 2-3 minutes. Rincez. Coupez l'extrémité usée et recommencez.
+      </div>
+    </details>
+
+    <details style="background:#111f13;border-radius:0.75rem;overflow:hidden;">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;cursor:pointer;list-style:none;">
+        <span style="font-weight:500;color:#d7e7d4;">Combien de temps dure un bâton de Siwak ?</span>
+        <span style="color:#8c9380;font-size:1.25rem;flex-shrink:0;">+</span>
+      </summary>
+      <div style="padding:0 1.5rem 1.25rem;color:#c2c9b4;font-size:0.875rem;line-height:1.7;border-top:1px solid rgba(66,73,57,0.2);padding-top:1rem;">
+        Un bâton SIVÀA dure en moyenne 2 à 4 semaines selon l'utilisation. Coupez l'extrémité utilisée (environ 1cm) après chaque séance pour toujours avoir une surface fraîche et hygiénique.
+      </div>
+    </details>
+
+    <details style="background:#111f13;border-radius:0.75rem;overflow:hidden;">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;cursor:pointer;list-style:none;">
+        <span style="font-weight:500;color:#d7e7d4;">Quels sont les délais et frais de livraison ?</span>
+        <span style="color:#8c9380;font-size:1.25rem;flex-shrink:0;">+</span>
+      </summary>
+      <div style="padding:0 1.5rem 1.25rem;color:#c2c9b4;font-size:0.875rem;line-height:1.7;border-top:1px solid rgba(66,73,57,0.2);padding-top:1rem;">
+        Livraison en 2-3 jours ouvrés via Swiss Post pour CHF 9.00. Toutes les commandes passées avant 14h sont expédiées le jour même (jours ouvrés). Vous recevez un email de confirmation avec numéro de suivi.
+      </div>
+    </details>
+
+  </div>
+  <div style="text-align:center;margin-top:2.5rem;">
+    <p style="color:#c2c9b4;font-size:0.875rem;margin-bottom:1rem;">Votre question n'est pas listée ?</p>
+    <a href="/contact" class="btn-ghost" style="border:1px solid rgba(66,73,57,0.3);font-size:0.875rem;">💬 Contacter notre atelier</a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     CTA BANNIÈRE FINALE
+════════════════════════════════════════════════════════════════ -->
+<section style="background:linear-gradient(90deg,#27500a,#152317);padding:5rem 0;">
+  <div style="max-width:56rem;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <p style="font-size:0.7rem;color:#9dd75a;text-transform:uppercase;letter-spacing:0.2em;margin-bottom:1rem;">Livraison Swiss Post · 48h</p>
+    <h2 style="font-size:3rem;font-weight:300;color:#d7e7d4;margin-bottom:1.5rem;">Commencez votre rituel <em style="font-style:normal;color:#9dd75a;">aujourd'hui</em></h2>
+    <p style="color:#c2c9b4;font-size:1.125rem;margin-bottom:2.5rem;max-width:36rem;margin-left:auto;margin-right:auto;">Rejoignez les centaines de Genevois qui ont adopté le rituel du Siwak. Naturel, efficace, éternel.</p>
+    <a href="/checkout" class="btn-primary" style="font-size:1rem;padding:1rem 2rem;">Commander mon Siwak →</a>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════════ -->
+<footer style="background:#051107;padding:3rem 0 1.5rem;border-top:1px solid rgba(66,73,57,0.2);">
+  <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <p style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:300;color:#9dd75a;margin-bottom:0.5rem;">SIVÀA Geneva</p>
+    <p style="font-size:0.75rem;color:#8c9380;">© 2025 SIVÀA Geneva · L'excellence du rituel ancestral, sublimée par l'expertise botanique suisse.</p>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     JAVASCRIPT — gestion des popups
+════════════════════════════════════════════════════════════════ -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Fermer avec Échap
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
